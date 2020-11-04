@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 19:22:45 by sdiego            #+#    #+#             */
-/*   Updated: 2020/11/04 17:06:09 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 19:28:09 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,7 +173,6 @@ t_stack_node			*find_min_num(t_stack *a);
 */
 void					optimal_markup_gt(t_stack *a);
 size_t					gt_markup(t_stack *a, t_stack_node *tmp);
-void					clear_keep(t_stack *a);
 void					optimal_markup_index(t_stack *a);
 size_t					index_markup(t_stack *a, t_stack_node *tmp);
 

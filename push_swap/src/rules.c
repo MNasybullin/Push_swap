@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 12:17:50 by sdiego            #+#    #+#             */
-/*   Updated: 2020/11/04 15:53:23 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 19:13:50 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	fixed_previous(t_stack *s)
 	}
 }
 
-void	fixedMarkupHead(t_stack *a)
+void	fixed_markup_head(t_stack *a)
 {
 	t_stack_node *tmp;
 
@@ -88,7 +88,7 @@ void	fixedMarkupHead(t_stack *a)
 
 int	push_a(t_stack *a, t_stack *b)
 {
-	int	nbr;
+	int		nbr;
 	size_t	index;
 
 	if (stack_pop(b, &nbr, &index) == EXIT_SUCCESS)
@@ -97,40 +97,10 @@ int	push_a(t_stack *a, t_stack *b)
 			stack_push(a, nbr, index);
 		else
 			stack_push_start(a, nbr, index);
-		fixedMarkupHead(a); ///
+		fixed_markup_head(a);
 	}
 	return (1);
 }
-
-/*
-int	push_a(t_stack *a, t_stack *b)
-{
-	t_stack_node *tmp;
-	t_stack_node *a_one;
-
-	if (b && b->head)
-	{
-		tmp = b->head;
-		a_one = a->head;
-		tmp->next = a_one;
-		tmp->previous = a_one->previous;
-		a_one->previous = tmp;
-		a->head = tmp;
-		a->size += 1;
-		if (b->head->next)
-		{
-			b->head->next->previous = NULL;
-			b->head = b->head->next;
-		}
-		else
-		{
-			b->head = NULL;
-		}
-		b->size -= 1;
-	}
-	return (1);
-}
-*/
 
 /*
 ** Takes the first item from "A" and inserts the first into "B"
@@ -138,7 +108,7 @@ int	push_a(t_stack *a, t_stack *b)
 
 int	push_b(t_stack *a, t_stack *b)
 {
-	int nbr;
+	int		nbr;
 	size_t	index;
 
 	if (stack_pop(a, &nbr, &index) == EXIT_SUCCESS)
@@ -147,7 +117,7 @@ int	push_b(t_stack *a, t_stack *b)
 			stack_push(b, nbr, index);
 		else
 			stack_push_start(b, nbr, index);
-		fixedMarkupHead(a); ///
+		fixed_markup_head(a);
 	}
 	return (1);
 }
@@ -166,7 +136,7 @@ int	rotate_a_b(t_stack *s)
 	if (stack_pop(s, &nbr, &index) == EXIT_SUCCESS)
 	{
 		stack_push(s, nbr, index);
-		fixedMarkupHead(s); ///
+		fixed_markup_head(s);
 	}
 	return (1);
 }
@@ -201,7 +171,7 @@ int	rr_a_b(t_stack *s)
 			stack_push(s, nbr, index);
 		else
 			stack_push_start(s, nbr, index);
-		fixedMarkupHead(s); ///
+		fixed_markup_head(s);
 	}
 	return (1);
 }

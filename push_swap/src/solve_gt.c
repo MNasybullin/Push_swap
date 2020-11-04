@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 18:05:06 by sdiego            #+#    #+#             */
-/*   Updated: 2020/11/04 15:54:31 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 19:14:15 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,6 @@ t_stack	*solve_gt(t_stack *a, t_stack *b)
 	rules = create_stack();
 	from_a_to_b_gt(a, b, rules);
 	from_b_to_a(a, b, rules);
-//	debug_print(a, b, 0);
 	sort_a(a, rules);
-//	debug_print(a, b, 0);
 	return (rules);
 }

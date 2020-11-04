@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/14 16:09:29 by sdiego            #+#    #+#             */
-/*   Updated: 2020/11/04 17:06:30 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 19:14:59 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	ft_isdigit_one(int argc, char *argv[], int param_len)
 		}
 		if (argv[i][j] == '\0' && j == 0)
 			return (EXIT_FAILURE);
-		if (j > 11 || (j > 9 && ft_isoverflow((char *)argv[i], 0) == EXIT_FAILURE))
+		if (j > 11 || (j > 9 && ft_isoverflow((char *)argv[i], 0) == 1))
 			return (EXIT_FAILURE);
 		i++;
 	}
@@ -95,7 +95,7 @@ int	ft_isdigit(int argc, char *argv[], t_stack *a, int debug)
 		}
 		if (argv[i][j] == '\0' && j == 0)
 			return (EXIT_FAILURE);
-		if (j > 11 || (j > 9 && ft_isoverflow((char *)argv[i], 0) == EXIT_FAILURE))
+		if (j > 11 || (j > 9 && ft_isoverflow((char *)argv[i], 0) == 1))
 			return (EXIT_FAILURE);
 		i++;
 	}

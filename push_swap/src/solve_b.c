@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 18:36:53 by sdiego            #+#    #+#             */
-/*   Updated: 2020/11/04 15:53:41 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 19:15:52 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,16 @@ void	move_b_stack(t_stack *b, t_direction *d, t_stack *rules)
 }
 
 /*
-** We put the previously selected numbers at the beginning of the stack a and stack b
+** We put the previously selected numbers at the beginning
+** of the stack a and stack b
 */
 
 void	move_stacks(t_stack *a, t_stack *b, t_direction *d, t_stack *rules)
 {
 	while (d->a_node->nbr != a->head->nbr || d->b_node->nbr != b->head->nbr)
 	{
-		if (d->a_rule == d->b_rule && d->a_node->nbr != a->head->nbr && d->b_node->nbr != b->head->nbr)
+		if (d->a_rule == d->b_rule && d->a_node->nbr != a->head->nbr &&
+		d->b_node->nbr != b->head->nbr)
 			move_a_b_stacks(a, b, d, rules);
 		else if (d->a_node->nbr != a->head->nbr)
 			move_a_stack(a, d, rules);

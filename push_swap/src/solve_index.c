@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 21:09:17 by sdiego            #+#    #+#             */
-/*   Updated: 2020/11/04 15:54:58 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 19:25:27 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,14 +120,6 @@ t_stack_node	*find_direct_in_a(t_stack *a, size_t index_b)
 	t_stack_node	*one_back;
 
 	tmp = a->markup_head;
-
-	/*
-	tmp = a->head;
-	while (tmp && tmp->nbr != a->markup_head->nbr)
-	{
-		tmp = tmp->next;
-	}
-	*/
 	if (index_b < tmp->index)
 	{
 		while (tmp && tmp->previous && index_b < tmp->previous->index && tmp->index > tmp->previous->index)

@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 18:41:17 by sdiego            #+#    #+#             */
-/*   Updated: 2020/11/04 16:57:38 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 19:19:10 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void		set_direction(t_direction new_d, t_direction *d, size_t size)
 ** needs to be done so that the selected number is at the beginning of the stack
 */
 
-void		check_direction(t_stack *s, size_t index, size_t *r_size, size_t *rr_size)
+void		check_direction(t_stack *s, size_t index, size_t *r_size,
+size_t *rr_size)
 {
 	t_stack_node	*tmp;
 	size_t			i;
@@ -84,7 +85,8 @@ void		check_direction(t_stack *s, size_t index, size_t *r_size, size_t *rr_size)
 ** Find optimal directions in stacks
 */
 
-void		find_direction(t_stack *a, t_stack *b, t_stack_node *current_b, t_direction *d)
+void		find_direction(t_stack *a, t_stack *b, t_stack_node *current_b,
+t_direction *d)
 {
 	t_direction new_d;
 	size_t		ra_size;

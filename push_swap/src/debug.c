@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/14 16:09:21 by sdiego            #+#    #+#             */
-/*   Updated: 2020/11/04 16:20:54 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 19:39:58 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Check for Debug option -v || -c
 */
 
-int	check_debug_option(char *argv[], t_stack *a)
+int		check_debug_option(char *argv[], t_stack *a)
 {
 	if (argv[1][0] == '-' && argv[1][1] == 'v')
 	{
@@ -36,7 +36,7 @@ int	check_debug_option(char *argv[], t_stack *a)
 ** Debug option -v
 */
 
-int	debug_v(t_stack_node *ad, t_stack_node *bd)
+int		debug_v(t_stack_node *ad, t_stack_node *bd)
 {
 	while (ad != NULL || bd != NULL)
 	{
@@ -64,7 +64,7 @@ int	debug_v(t_stack_node *ad, t_stack_node *bd)
 ** 9 - last element paint
 */
 
-void	debug_c_helper(int	rule, int *a, int *b)
+void	debug_c_helper(int rule, int *a, int *b)
 {
 	if (rule == 0)
 	{
@@ -83,7 +83,7 @@ void	debug_c_helper(int	rule, int *a, int *b)
 ** Debug option -v && -c
 */
 
-int	debug_c(t_stack_node *ad, t_stack_node *bd, int rule)
+int		debug_c(t_stack_node *ad, t_stack_node *bd, int rule)
 {
 	int	i;
 	int	a;
@@ -122,7 +122,7 @@ int	debug_c(t_stack_node *ad, t_stack_node *bd, int rule)
 ** Displays stacks in the terminal
 */
 
-int	debug_print(t_stack *a, t_stack *b, int rule)
+int		debug_print(t_stack *a, t_stack *b, int rule)
 {
 	t_stack_node	*ad;
 	t_stack_node	*bd;

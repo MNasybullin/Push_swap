@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/14 17:27:11 by sdiego            #+#    #+#             */
-/*   Updated: 2020/11/04 15:46:18 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 19:30:31 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,7 @@ size_t	gt_markup(t_stack *a, t_stack_node *markup_head)
 			index = tmp->index;
 		}
 		else
-		{
 			tmp->keep = FALSE;
-		}
 		tmp = tmp->next;
 	}
 	tmp = a->head;
@@ -52,28 +50,10 @@ size_t	gt_markup(t_stack *a, t_stack_node *markup_head)
 			index = tmp->index;
 		}
 		else
-		{
 			tmp->keep = FALSE;
-		}
 		tmp = tmp->next;
 	}
 	return (markup_size);
-}
-
-/*
-** Clear value keep in stack
-*/
-
-void	clear_keep(t_stack *a)
-{
-	t_stack_node	*tmp;
-
-	tmp = a->head;
-	while (tmp != NULL)
-	{
-		tmp->keep = FALSE;
-		tmp = tmp->next;
-	}
 }
 
 /*
@@ -97,7 +77,8 @@ void	optimal_markup_gt(t_stack *a)
 				a->markup_head = tmp;
 				a->markup_size = mark_size;
 			}
-			else if (mark_size == a->markup_size && (!a->markup_head || tmp->nbr < a->markup_head->nbr))
+			else if (mark_size == a->markup_size &&
+			(!a->markup_head || tmp->nbr < a->markup_head->nbr))
 				a->markup_head = tmp;
 			tmp = tmp->next;
 		}
@@ -130,9 +111,7 @@ size_t	index_markup(t_stack *a, t_stack_node *markup_head)
 			index++;
 		}
 		else
-		{
 			tmp->keep = FALSE;
-		}
 		tmp = tmp->next;
 	}
 	tmp = a->head;
@@ -145,9 +124,7 @@ size_t	index_markup(t_stack *a, t_stack_node *markup_head)
 			index++;
 		}
 		else
-		{
 			tmp->keep = FALSE;
-		}
 		tmp = tmp->next;
 	}
 	return (markup_size);
@@ -174,7 +151,8 @@ void	optimal_markup_index(t_stack *a)
 				a->markup_head = tmp;
 				a->markup_size = mark_size;
 			}
-			else if (mark_size == a->markup_size && (!a->markup_head || tmp->nbr < a->markup_head->nbr))
+			else if (mark_size == a->markup_size &&
+			(!a->markup_head || tmp->nbr < a->markup_head->nbr))
 				a->markup_head = tmp;
 			tmp = tmp->next;
 		}

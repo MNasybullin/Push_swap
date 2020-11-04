@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/07 20:46:39 by sdiego            #+#    #+#             */
-/*   Updated: 2020/11/04 15:57:39 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 19:22:01 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ void	stack_push(t_stack *s, int nbr, size_t index)
 	t_stack_node *node;
 	t_stack_node *tmp;
 
-	node = (t_stack_node *)mem(sizeof(t_stack_node));
-	if (node == NULL)
+	if ((node = (t_stack_node *)mem(sizeof(t_stack_node))) == NULL)
 		exit_print_err(MALER, EXIT_FAILURE);
 	node->nbr = nbr;
 	node->index = index;
@@ -58,9 +57,7 @@ void	stack_push(t_stack *s, int nbr, size_t index)
 	{
 		tmp = s->head;
 		while (tmp->next != NULL)
-		{
 			tmp = tmp->next;
-		}
 		tmp->next = node;
 		s->tail = node;
 		node->previous = tmp;
