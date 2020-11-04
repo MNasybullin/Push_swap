@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 17:18:57 by sdiego            #+#    #+#             */
-/*   Updated: 2020/09/02 09:12:18 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 15:50:39 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_putendl(char const *s)
 	if (s)
 	{
 		ft_putstr(s);
-		write(1, "\n", 1);
+		write(2, "\n", 1);
 	}
 }
 

@@ -6,12 +6,11 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 15:36:58 by sdiego            #+#    #+#             */
-/*   Updated: 2020/07/21 16:43:03 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 15:45:40 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
 
 char	*ft_strchr(const char *s, int c)
 {

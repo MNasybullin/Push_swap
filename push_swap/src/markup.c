@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/14 17:27:11 by sdiego            #+#    #+#             */
-/*   Updated: 2020/09/01 10:12:55 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 15:46:18 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /*
 ** greater than markup mode
 */
+
 size_t	gt_markup(t_stack *a, t_stack_node *markup_head)
 {
 	size_t			markup_size;
@@ -62,12 +63,13 @@ size_t	gt_markup(t_stack *a, t_stack_node *markup_head)
 /*
 ** Clear value keep in stack
 */
+
 void	clear_keep(t_stack *a)
 {
 	t_stack_node	*tmp;
 
 	tmp = a->head;
-	while(tmp != NULL)
+	while (tmp != NULL)
 	{
 		tmp->keep = FALSE;
 		tmp = tmp->next;
@@ -77,6 +79,7 @@ void	clear_keep(t_stack *a)
 /*
 ** Find optimal direction (markup_head) in stack
 */
+
 void	optimal_markup_gt(t_stack *a)
 {
 	t_stack_node	*tmp;
@@ -102,10 +105,10 @@ void	optimal_markup_gt(t_stack *a)
 	gt_markup(a, a->markup_head);
 }
 
-
 /*
 ** index markup mode
 */
+
 size_t	index_markup(t_stack *a, t_stack_node *markup_head)
 {
 	size_t			markup_size;
@@ -153,6 +156,7 @@ size_t	index_markup(t_stack *a, t_stack_node *markup_head)
 /*
 ** Find optimal direction (markup_head) in stack
 */
+
 void	optimal_markup_index(t_stack *a)
 {
 	t_stack_node	*tmp;

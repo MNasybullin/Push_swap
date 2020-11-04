@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 12:17:50 by sdiego            #+#    #+#             */
-/*   Updated: 2020/09/02 09:13:16 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 15:53:23 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /*
 ** Swaps the first two elements (sa) || (sb)
 */
+
 int	swap_a_b(t_stack *a)
 {
 	t_stack_node	*next_tmp;
@@ -39,6 +40,7 @@ int	swap_a_b(t_stack *a)
 /*
 ** Do (swap_a) && (swap_b)
 */
+
 int	ss(t_stack *a, t_stack *b)
 {
 	swap_a_b(a);
@@ -83,6 +85,7 @@ void	fixedMarkupHead(t_stack *a)
 /*
 ** Takes the first item from "B" and inserts the first into "A"
 */
+
 int	push_a(t_stack *a, t_stack *b)
 {
 	int	nbr;
@@ -98,6 +101,7 @@ int	push_a(t_stack *a, t_stack *b)
 	}
 	return (1);
 }
+
 /*
 int	push_a(t_stack *a, t_stack *b)
 {
@@ -131,6 +135,7 @@ int	push_a(t_stack *a, t_stack *b)
 /*
 ** Takes the first item from "A" and inserts the first into "B"
 */
+
 int	push_b(t_stack *a, t_stack *b)
 {
 	int nbr;
@@ -150,6 +155,7 @@ int	push_b(t_stack *a, t_stack *b)
 /*
 ** The first item from the stack becomes the last (ra) || (rb)
 */
+
 int	rotate_a_b(t_stack *s)
 {
 	int		nbr;
@@ -157,24 +163,22 @@ int	rotate_a_b(t_stack *s)
 
 	if (s->size < 2)
 		return (1);
-
 	if (stack_pop(s, &nbr, &index) == EXIT_SUCCESS)
 	{
 		stack_push(s, nbr, index);
 		fixedMarkupHead(s); ///
 	}
-
 	return (1);
 }
 
 /*
 ** Do (rotate_a) && (rotate_b)
 */
+
 int	rr(t_stack *a, t_stack *b)
 {
 	rotate_a_b(a);
 	rotate_a_b(b);
-
 	return (1);
 }
 
@@ -182,6 +186,7 @@ int	rr(t_stack *a, t_stack *b)
 ** Reverse rotate a || b
 ** Last item becomes first
 */
+
 int	rr_a_b(t_stack *s)
 {
 	int		nbr;
@@ -198,17 +203,16 @@ int	rr_a_b(t_stack *s)
 			stack_push_start(s, nbr, index);
 		fixedMarkupHead(s); ///
 	}
-
 	return (1);
 }
 
 /*
 ** Do reverse rotate a && reverse rotate b
 */
+
 int	rrr(t_stack *a, t_stack *b)
 {
 	rr_a_b(a);
 	rr_a_b(b);
-
 	return (1);
 }

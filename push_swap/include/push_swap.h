@@ -6,18 +6,19 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 19:22:45 by sdiego            #+#    #+#             */
-/*   Updated: 2020/09/02 09:21:52 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 16:20:12 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
+//# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include "../include/mem_lst.h"
 # include "../include/get_next_line.h"
+# include "../ft_printf/include/ft_printf.h"
 
 /*
 ** Messages

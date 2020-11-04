@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/14 14:49:34 by sdiego            #+#    #+#             */
-/*   Updated: 2020/09/02 08:47:16 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 15:51:03 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	print_rules(t_stack *rule)
 }
 
 
-int	loop(t_stack *a_in, t_stack *b_in, t_stack *a_gt, t_stack *b_gt)
+int		loop(t_stack *a_in, t_stack *b_in, t_stack *a_gt, t_stack *b_gt)
 {
 	t_stack	*gt_rules;
 	t_stack	*index_rules;

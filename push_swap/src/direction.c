@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 18:41:17 by sdiego            #+#    #+#             */
-/*   Updated: 2020/09/02 08:54:09 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 15:42:17 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /*
 ** Initialization direction struct
 */
+
 t_direction	*init_direction_struct()
 {
 	t_direction	*d;
@@ -50,6 +51,7 @@ void	set_direction(t_direction new_d, t_direction *d, size_t size)
 ** How many actions to rotate || reverse rotate
 ** needs to be done so that the selected number is at the beginning of the stack
 */
+
 void	check_direction(t_stack *s, size_t index, size_t *r_size, size_t *rr_size)
 {
 	t_stack_node	*tmp;
@@ -90,6 +92,7 @@ void	check_direction(t_stack *s, size_t index, size_t *r_size, size_t *rr_size)
 /*
 ** Find optimal directions in stacks
 */
+
 void	find_direction(t_stack *a, t_stack *b, t_stack_node *current_b, t_direction *d)
 {
 	t_direction new_d;
@@ -106,17 +109,13 @@ void	find_direction(t_stack *a, t_stack *b, t_stack_node *current_b, t_direction
 	new_d.b_node = current_b;
 	check_direction(a, new_d.a_node->index, &ra_size, &rra_size);
 	check_direction(b, current_b->index, &rb_size, &rrb_size);
-
 	new_d.a_rule = ROTATE;
 	new_d.b_rule = ROTATE;
 	set_direction(new_d, d, FT_IS_MAX(ra_size, rb_size));
-
 	new_d.a_rule = REVERSE;
 	set_direction(new_d, d, rra_size + rb_size);
-
 	new_d.b_rule = REVERSE;
 	set_direction(new_d, d, FT_IS_MAX(rra_size, rrb_size));
-
 	new_d.a_rule = ROTATE;
 	set_direction(new_d, d, ra_size + rrb_size);
 }

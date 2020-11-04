@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mem_lst.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdiego <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/04 09:09:41 by aannara           #+#    #+#             */
-/*   Updated: 2020/06/07 20:24:55 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 15:49:42 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	new_m(void *pointer)
 	t_mem	*tmp;
 
 	new = (t_mem*)malloc(sizeof(t_mem));
+	if (new == NULL)
+		exit_print_err(MALER, EXIT_FAILURE);
 	new->p = pointer;
 	new->next = NULL;
 	new->last = new;
@@ -70,6 +72,8 @@ void	*mem(size_t size)
 	void	*p;
 
 	p = malloc(size);
+	if (p == NULL)
+		exit_print_err(MALER, EXIT_FAILURE);
 	new_m(p);
 	return (p);
 }

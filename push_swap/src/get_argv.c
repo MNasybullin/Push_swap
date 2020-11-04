@@ -6,12 +6,13 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/14 16:09:29 by sdiego            #+#    #+#             */
-/*   Updated: 2020/08/29 11:24:05 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 16:19:12 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/*
 int		ft_atoi(const char *str)
 {
 	int	i;
@@ -31,10 +32,12 @@ int		ft_atoi(const char *str)
 		nbr = (nbr * 10) + (str[i++] - '0');
 	return (nbr * sign);
 }
+*/
 
 /*
 ** Int overflow check
 */
+
 int	ft_isoverflow(char *c, int i, int a)
 {
 	if (c[i] == '+' || c[i] == '-')
@@ -59,10 +62,10 @@ int	ft_isoverflow(char *c, int i, int a)
 		return (EXIT_SUCCESS);
 }
 
-
 /*
 ** Validation of numbers
 */
+
 int	ft_isdigit_one(int argc, char *argv[], t_stack *a, int param_len)
 {
 	int	i;
@@ -92,6 +95,7 @@ int	ft_isdigit_one(int argc, char *argv[], t_stack *a, int param_len)
 /*
 ** Validation of numbers
 */
+
 int	ft_isdigit(int argc, char *argv[], t_stack *a, int debug)
 {
 	int	i;
@@ -123,6 +127,7 @@ int	ft_isdigit(int argc, char *argv[], t_stack *a, int debug)
 /*
 ** Check numbers for dublicate
 */
+
 int	ft_dubl_search(t_stack *node, int nbr)
 {
 	t_stack_node	*tmp;
@@ -152,6 +157,7 @@ int	ft_dubl_search(t_stack *node, int nbr)
 ** Check numbers for dublicate
 ** If no matches are found, the number is written to the stack A
 */
+
 int	ft_dublicate(int argc, char *argv[], t_stack *a, int param_len)
 {
 	t_stack *node;

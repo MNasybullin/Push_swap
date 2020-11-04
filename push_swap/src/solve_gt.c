@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 18:05:06 by sdiego            #+#    #+#             */
-/*   Updated: 2020/09/01 09:58:48 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 15:54:31 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 ** Is there a "FALSE" on stack A
 ** 1 - yes || 0 - no
 */
-int	a_has_false(t_stack *a)
+
+int		a_has_false(t_stack *a)
 {
 	t_stack_node	*tmp;
+
 	if (a)
 	{
 		tmp = a->head;
@@ -36,7 +38,8 @@ int	a_has_false(t_stack *a)
 ** Do I need to do a swap_a ? gt mode
 ** 1 - yes ||  0 - no
 */
-int	sa_need_gt(t_stack *a)
+
+int		sa_need_gt(t_stack *a)
 {
 	size_t	markup_after;
 
@@ -56,6 +59,7 @@ int	sa_need_gt(t_stack *a)
 /*
 ** From A stack to Stack B gt markup mode
 */
+
 void	from_a_to_b_gt(t_stack *a, t_stack *b, t_stack *rules)
 {
 	while (a_has_false(a))

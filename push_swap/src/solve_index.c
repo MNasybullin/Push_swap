@@ -6,17 +6,17 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 21:09:17 by sdiego            #+#    #+#             */
-/*   Updated: 2020/09/02 09:14:52 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 15:54:58 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-
 /*
 ** Do I need to do a swap_a ? index mode
 ** 1 - yes ||  0 - no
 */
+
 int	sa_need_index(t_stack *a)
 {
 	size_t	markup_after;
@@ -34,10 +34,10 @@ int	sa_need_index(t_stack *a)
 	return (0);
 }
 
-
 /*
 ** From A stack to Stack B index markup mode
 */
+
 void	from_a_to_b_index(t_stack *a, t_stack *b, t_stack *rules)
 {
 	while (a_has_false(a))
@@ -113,6 +113,7 @@ void	sort_a(t_stack *a, t_stack *rules)
 /*
 ** We are looking for a suitable element in stack A
 */
+
 t_stack_node	*find_direct_in_a(t_stack *a, size_t index_b)
 {
 	t_stack_node	*tmp;

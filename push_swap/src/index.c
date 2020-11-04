@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdiego <sdiego@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/14 17:27:02 by sdiego            #+#    #+#             */
-/*   Updated: 2020/08/01 19:46:19 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 15:20:52 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ t_stack_node	*find_min_num(t_stack *a)
 	tmp = a->head;
 	min_num = FALSE;
 	min = NULL;
-
 	while (tmp != NULL)
 	{
 		if (tmp->index == -1 && (min_num == FALSE || tmp->nbr < min->nbr))
@@ -37,9 +36,10 @@ t_stack_node	*find_min_num(t_stack *a)
 /*
 ** Give each number on the stack its own index
 */
-void	give_index(t_stack *a)
+
+void			give_index(t_stack *a)
 {
-	size_t	index;
+	size_t			index;
 	t_stack_node	*tmp;
 
 	index = 0;

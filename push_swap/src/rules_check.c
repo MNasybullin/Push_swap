@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/14 16:15:28 by sdiego            #+#    #+#             */
-/*   Updated: 2020/09/02 09:31:24 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 16:21:09 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,27 @@
 
 void	do_rules(t_stack *a, t_stack *b, char *line, int *rule)
 {
-	if (ft_strequ(line, "sa") && (a->debug == 0 || printf("sa\n")))
+	if (ft_strequ(line, "sa") && (a->debug == 0 || ft_printf("sa\n")))
 		*rule = 24 + swap_a_b(a);
-	else if (ft_strequ(line, "sb") && (a->debug == 0 || printf("sb\n")))
+	else if (ft_strequ(line, "sb") && (a->debug == 0 || ft_printf("sb\n")))
 		*rule = 51 + swap_a_b(b);
-	else if (ft_strequ(line, "ss") && (a->debug == 0 || printf("ss\n")))
+	else if (ft_strequ(line, "ss") && (a->debug == 0 || ft_printf("ss\n")))
 		*rule = 21 + ss(a, b);
-	else if (ft_strequ(line, "pa") && (a->debug == 0 || printf("pa\n")))
+	else if (ft_strequ(line, "pa") && (a->debug == 0 || ft_printf("pa\n")))
 		*rule = 14 + push_a(a, b);
-	else if (ft_strequ(line, "pb") && (a->debug == 0 || printf("pb\n")))
+	else if (ft_strequ(line, "pb") && (a->debug == 0 || ft_printf("pb\n")))
 		*rule = 50 + push_b(a, b);
-	else if (ft_strequ(line, "ra") && (a->debug == 0 || printf("ra\n")))
+	else if (ft_strequ(line, "ra") && (a->debug == 0 || ft_printf("ra\n")))
 		*rule = 94 + rotate_a_b(a);
-	else if (ft_strequ(line, "rb") && (a->debug == 0 || printf("rb\n")))
+	else if (ft_strequ(line, "rb") && (a->debug == 0 || ft_printf("rb\n")))
 		*rule = 58 + rotate_a_b(b);
-	else if (ft_strequ(line, "rr") && (a->debug == 0 || printf("rr\n")))
+	else if (ft_strequ(line, "rr") && (a->debug == 0 || ft_printf("rr\n")))
 		*rule = 98 + rr(a, b);
-	else if (ft_strequ(line, "rra") && (a->debug == 0 || printf("rra\n")))
+	else if (ft_strequ(line, "rra") && (a->debug == 0 || ft_printf("rra\n")))
 		*rule = 14 + rr_a_b(a);
-	else if (ft_strequ(line, "rrb") && (a->debug == 0 || printf("rrb\n")))
+	else if (ft_strequ(line, "rrb") && (a->debug == 0 || ft_printf("rrb\n")))
 		*rule = 50 + rr_a_b(b);
-	else if (ft_strequ(line, "rrr") && (a->debug == 0 || printf("rrr\n")))
+	else if (ft_strequ(line, "rrr") && (a->debug == 0 || ft_printf("rrr\n")))
 		*rule = 10 + rrr(a, b);
 }
 

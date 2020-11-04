@@ -6,7 +6,7 @@
 #    By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/17 13:24:05 by aannara           #+#    #+#              #
-#    Updated: 2020/09/02 09:15:39 by sdiego           ###   ########.fr        #
+#    Updated: 2020/11/04 16:25:33 by sdiego           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,8 @@ OBJ_CHECKER = $(SRC_CHECKER:.c=.o)
 
 OBJ_PUSH_SWAP = $(SRC_PUSH_SWAP:.c=.o)
 
+FT_PRINTF = -L./ ./ft_printf/libftprintf.a
+
 CFLAGS = -o
 
 INCLUDES = ./include
@@ -40,18 +42,21 @@ HEADERS = $(INCLUDES)/push_swap.h $(INCLUDES)/get_next_line.h $(INCLUDES)/mem_ls
 all: $(NAME1) $(NAME2)
 
 $(NAME1): $(OBJ) $(OBJ_CHECKER) $(HEADERS)
-	gcc $(CFLAGS) $(NAME1) $(OBJ) $(OBJ_CHECKER) -I$(INCLUDES)
+	make -C ./ft_printf
+	gcc $(CFLAGS) $(NAME1) $(OBJ) $(OBJ_CHECKER) -I$(INCLUDES) $(FT_PRINTF)
 
 $(NAME2): $(OBJ) $(OBJ_PUSH_SWAP) $(HEADERS)
-	gcc $(CFLAGS) $(NAME2) $(OBJ) $(OBJ_PUSH_SWAP) -I$(INCLUDES)
+	gcc $(CFLAGS) $(NAME2) $(OBJ) $(OBJ_PUSH_SWAP) -I$(INCLUDES) $(FT_PRINTF)
 
 .c.o: $(HEADERS)
 	gcc -I$(INCLUDES) -c $< -o $@
 
 clean:
+	make clean -C ./ft_printf
 	rm -fr ./src/*.o
 
 fclean: clean
+	make fclean -C ./ft_printf
 	rm -fr $(NAME1)
 	rm -fr $(NAME2)
 
