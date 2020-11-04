@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/14 17:27:02 by sdiego            #+#    #+#             */
-/*   Updated: 2020/11/04 15:20:52 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 17:06:50 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_stack_node	*find_min_num(t_stack *a)
 	min = NULL;
 	while (tmp != NULL)
 	{
-		if (tmp->index == -1 && (min_num == FALSE || tmp->nbr < min->nbr))
+		if ((int)tmp->index == -1 && (min_num == FALSE || tmp->nbr < min->nbr))
 		{
 			min_num = TRUE;
 			min = tmp;

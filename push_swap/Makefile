@@ -6,7 +6,7 @@
 #    By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/17 13:24:05 by aannara           #+#    #+#              #
-#    Updated: 2020/11/04 16:25:33 by sdiego           ###   ########.fr        #
+#    Updated: 2020/11/04 17:05:06 by sdiego           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ $(NAME2): $(OBJ) $(OBJ_PUSH_SWAP) $(HEADERS)
 	gcc $(CFLAGS) $(NAME2) $(OBJ) $(OBJ_PUSH_SWAP) -I$(INCLUDES) $(FT_PRINTF)
 
 .c.o: $(HEADERS)
-	gcc -I$(INCLUDES) -c $< -o $@
+	gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $< -o $@
 
 clean:
 	make clean -C ./ft_printf

@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 18:41:17 by sdiego            #+#    #+#             */
-/*   Updated: 2020/11/04 15:42:17 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 16:57:38 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Initialization direction struct
 */
 
-t_direction	*init_direction_struct()
+t_direction	*init_direction_struct(void)
 {
 	t_direction	*d;
 
@@ -29,11 +29,10 @@ t_direction	*init_direction_struct()
 	d->size = 0;
 	d->a_rule = ROTATE;
 	d->b_rule = ROTATE;
-
 	return (d);
 }
 
-void	set_direction(t_direction new_d, t_direction *d, size_t size)
+void		set_direction(t_direction new_d, t_direction *d, size_t size)
 {
 	if (d->status == FALSE || size < d->size)
 	{
@@ -52,7 +51,7 @@ void	set_direction(t_direction new_d, t_direction *d, size_t size)
 ** needs to be done so that the selected number is at the beginning of the stack
 */
 
-void	check_direction(t_stack *s, size_t index, size_t *r_size, size_t *rr_size)
+void		check_direction(t_stack *s, size_t index, size_t *r_size, size_t *rr_size)
 {
 	t_stack_node	*tmp;
 	size_t			i;
@@ -66,7 +65,6 @@ void	check_direction(t_stack *s, size_t index, size_t *r_size, size_t *rr_size)
 			(*r_size)++;
 			tmp = tmp->next;
 		}
-
 		tmp = s->head;
 		if (tmp && tmp->index != index)
 			(*rr_size)++;
@@ -79,13 +77,6 @@ void	check_direction(t_stack *s, size_t index, size_t *r_size, size_t *rr_size)
 				tmp = tmp->previous;
 			}
 		}
-		/*tmp = s->tail;
-		while (tmp && tmp->index != index)
-		{
-			(*rr_size)++;
-			tmp = tmp->previous;
-		}
-		(*rr_size)++;*/
 	}
 }
 
@@ -93,7 +84,7 @@ void	check_direction(t_stack *s, size_t index, size_t *r_size, size_t *rr_size)
 ** Find optimal directions in stacks
 */
 
-void	find_direction(t_stack *a, t_stack *b, t_stack_node *current_b, t_direction *d)
+void		find_direction(t_stack *a, t_stack *b, t_stack_node *current_b, t_direction *d)
 {
 	t_direction new_d;
 	size_t		ra_size;
@@ -120,7 +111,7 @@ void	find_direction(t_stack *a, t_stack *b, t_stack_node *current_b, t_direction
 	set_direction(new_d, d, ra_size + rrb_size);
 }
 
-void	optimal_direction(t_stack *a, t_stack *b, t_direction *d)
+void		optimal_direction(t_stack *a, t_stack *b, t_direction *d)
 {
 	t_stack_node	*current;
 

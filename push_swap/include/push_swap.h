@@ -6,14 +6,13 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 19:22:45 by sdiego            #+#    #+#             */
-/*   Updated: 2020/11/04 16:20:12 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 17:06:09 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-//# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include "../include/mem_lst.h"
@@ -117,12 +116,11 @@ void					ft_putstr(char const *s);
 */
 int						ft_isdigit(int argc, char *argv[], t_stack *a,
 int debug);
-int						ft_isdigit_one(int argc, char *argv[], t_stack *a,
-int param_len);
+int						ft_isdigit_one(int argc, char *argv[], int param_len);
 int						ft_dublicate(int argc, char *argv[], t_stack *a,
 int param_len);
 int						ft_atoi(const char *str);
-int						ft_isoverflow(char *c, int i, int a);
+int						ft_isoverflow(char *c, int i);
 int						ft_dubl_search(t_stack *node, int nbr);
 char					**ft_strsplit(char const *s, char c);
 int						ft_check_space(char *str);
@@ -130,7 +128,7 @@ int						ft_check_space(char *str);
 /*
 ** Rule and stack checking functions
 */
-int						check_rules(t_stack *a, t_stack *b);
+int						check_rules(t_stack *a, t_stack *b, char *argv[], int free_param);
 int						check_sort(t_stack *a, t_stack *b);
 void					do_rules(t_stack *a, t_stack *b, char *line, int *rule);
 

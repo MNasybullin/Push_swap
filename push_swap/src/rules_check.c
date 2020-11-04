@@ -6,7 +6,7 @@
 /*   By: sdiego <sdiego@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/14 16:15:28 by sdiego            #+#    #+#             */
-/*   Updated: 2020/11/04 16:21:09 by sdiego           ###   ########.fr       */
+/*   Updated: 2020/11/04 16:48:25 by sdiego           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,27 @@ int		check_sort(t_stack *a, t_stack *b)
 	return (EXIT_SUCCESS);
 }
 
+void	final_check(t_stack *a, t_stack *b, char *argv[], int free_param)
+{
+	if (check_sort(a, b) == EXIT_SUCCESS)
+	{
+		if (free_param == TRUE)
+			exit_print_err_and_free_str(OK, EXIT_SUCCESS, argv);
+		exit_print_err(OK, EXIT_SUCCESS);
+	}
+	else
+	{
+		if (free_param == TRUE)
+			exit_print_err_and_free_str(KO, EXIT_FAILURE, argv);
+		exit_print_err(KO, EXIT_FAILURE);
+	}
+}
+
 /*
 ** Checking incoming instructions (rules)
 */
 
-int		check_rules(t_stack *a, t_stack *b)
+int		check_rules(t_stack *a, t_stack *b, char *argv[], int free_param)
 {
 	char	*line;
 	int		len;
@@ -105,7 +121,6 @@ int		check_rules(t_stack *a, t_stack *b)
 		debug_print(a, b, rule);
 		ft_strdel(&line);
 	}
-	check_sort(a, b) == EXIT_SUCCESS ?
-	exit_print_err(OK, EXIT_SUCCESS) : exit_print_err(KO, EXIT_FAILURE);
+	final_check(a, b, argv, free_param);
 	return (EXIT_SUCCESS);
 }
